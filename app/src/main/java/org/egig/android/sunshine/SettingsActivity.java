@@ -5,6 +5,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 public class SettingsActivity extends PreferenceActivity
         implements Preference.OnPreferenceChangeListener {
@@ -16,8 +17,10 @@ public class SettingsActivity extends PreferenceActivity
         // TODO why this is deprecated ?
         addPreferencesFromResource(R.xml.pref_general);
 
-        Preference preference = findPreference(getString(R.string.pref_location_key));
-        bindPreferenceSummaryToValue(preference);
+        Preference locationPreference = findPreference(getString(R.string.pref_location_key));
+        bindPreferenceSummaryToValue(locationPreference);
+        Preference unitsPreference = findPreference(getString(R.string.pref_units_key));
+        bindPreferenceSummaryToValue(locationPreference);
     }
 
     /**
@@ -39,9 +42,11 @@ public class SettingsActivity extends PreferenceActivity
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object value) {
+        /* TODO this method not fired for units reference */
         String stringValue = value.toString();
-
+        Log.d("DUMP", "ok test");
         if (preference instanceof ListPreference) {
+            Log.d("DUMP", "ok");
             // For list preferences, look up the correct display value in
             // the preference's 'entries' list (since they have separate labels/values).
             ListPreference listPreference = (ListPreference) preference;
