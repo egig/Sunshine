@@ -5,6 +5,8 @@
     <string name="title_activity_dummy">DummyActivity</string>
     <string name="action_refresh">Refresh</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pref_location_key">location</string>
+    <string name="pref_location_label">Location</string>
+    <string name="pref_location_detault">15610</string>
 </resources>
