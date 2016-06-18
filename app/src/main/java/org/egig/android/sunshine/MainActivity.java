@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -79,7 +80,8 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
-            Log.d(LOG_TAG, "Could not call "+location+ "no");
+            Toast  textToast = Toast.makeText(this, "Can not find appication that can handle the action", Toast.LENGTH_SHORT);
+            textToast.show();
         }
     }
 }
